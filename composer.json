@@ -1,0 +1,24 @@
+{
+    "name": "diego-lap/bienesraices",
+    "description": "creando un proyecto con POO",
+    "type": "project",
+    "license": "no",
+    "authors": [
+        {
+            "name": "dart94",
+            "email": "167586944+dart94@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "2.7",
+        "phpmailer/phpmailer": "^6.9",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4":{
+            "Model\\" : "./models",
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers"
+        }
+    }
+}
