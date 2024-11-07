@@ -44,7 +44,7 @@ class Router {
             call_user_func($fn,$this);
 
         }else{
-            echo "No existe la ruta, por el momento no se puede acceder a la ruta";
+            echo "Por el momento no se puede acceder a la ruta";
         }
     }
 
