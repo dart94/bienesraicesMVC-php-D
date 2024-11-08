@@ -1,0 +1,18 @@
+name: Sync on DOM Cloud
+'on':
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invoke deployment hook
+        uses: distributhor/workflow-webhook@v2
+        env:
+          webhook_url: "https://my.domcloud.co/api/githubdeploy"
+          webhook_secret: "9b811d072c90e7862f6c3066944526890a545f38"
+          webhook_auth: "bienesraices-php-mvc-diego:Su6t3(wa4A14OtJ(P("
+          data: '{"commands":[null]}'
