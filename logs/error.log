@@ -34,3 +34,46 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Fri Nov 08 01:53:56.533461 2024] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
 [Fri Nov 08 20:22:34.157108 2024] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.0.30 configured -- resuming normal operations
 [Fri Nov 08 20:22:34.157871 2024] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Nov 08 21:27:42.605855 2024] [core:alert] [pid 26] [client 172.18.0.1:55826] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:27:43.116463 2024] [core:alert] [pid 29] [client 172.18.0.1:55842] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:27:47.778881 2024] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[Fri Nov 08 21:27:52.225245 2024] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.0.30 configured -- resuming normal operations
+[Fri Nov 08 21:27:52.226072 2024] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Nov 08 21:27:54.395809 2024] [core:alert] [pid 23] [client 172.18.0.1:57060] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:27:54.545166 2024] [core:alert] [pid 24] [client 172.18.0.1:57068] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:27:55.277766 2024] [core:alert] [pid 25] [client 172.18.0.1:57082] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:27:55.387935 2024] [core:alert] [pid 26] [client 172.18.0.1:57092] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:28:03.654259 2024] [core:alert] [pid 27] [client 172.18.0.1:57108] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:28:04.521559 2024] [core:alert] [pid 23] [client 172.18.0.1:57110] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:29:47.607376 2024] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[Fri Nov 08 21:29:54.262128 2024] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.0.30 configured -- resuming normal operations
+[Fri Nov 08 21:29:54.262972 2024] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Nov 08 21:34:12.616027 2024] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[Fri Nov 08 21:34:22.643777 2024] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.0.30 configured -- resuming normal operations
+[Fri Nov 08 21:34:22.644233 2024] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Nov 08 21:34:38.512066 2024] [core:alert] [pid 17] [client 172.18.0.1:59674] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:34:38.653074 2024] [core:alert] [pid 18] [client 172.18.0.1:59682] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:34:51.934471 2024] [core:alert] [pid 19] [client 172.18.0.1:58208] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:34:52.505123 2024] [core:alert] [pid 20] [client 172.18.0.1:58216] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:35:02.072190 2024] [core:alert] [pid 21] [client 172.18.0.1:56378] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:35:02.352265 2024] [core:alert] [pid 17] [client 172.18.0.1:56380] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:37:12.099548 2024] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[Fri Nov 08 21:37:13.735142 2024] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.0.30 configured -- resuming normal operations
+[Fri Nov 08 21:37:13.735813 2024] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Nov 08 21:37:18.656986 2024] [core:alert] [pid 17] [client 172.18.0.1:39822] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:37:18.778473 2024] [core:alert] [pid 18] [client 172.18.0.1:39830] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:37:19.266374 2024] [core:alert] [pid 19] [client 172.18.0.1:39846] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:37:19.389369 2024] [core:alert] [pid 20] [client 172.18.0.1:39848] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:37:19.979367 2024] [core:alert] [pid 21] [client 172.18.0.1:39852] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:37:20.092950 2024] [core:alert] [pid 17] [client 172.18.0.1:39866] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:37:46.658747 2024] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+[Fri Nov 08 21:38:07.555725 2024] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.0.30 configured -- resuming normal operations
+[Fri Nov 08 21:38:07.556194 2024] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Nov 08 21:38:08.014565 2024] [core:alert] [pid 17] [client 172.18.0.1:40658] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:38:08.521787 2024] [core:alert] [pid 18] [client 172.18.0.1:40656] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:39:13.640375 2024] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[Fri Nov 08 21:39:22.216761 2024] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.0.30 configured -- resuming normal operations
+[Fri Nov 08 21:39:22.217327 2024] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Nov 08 21:40:12.801392 2024] [core:alert] [pid 17] [client 172.18.0.1:45622] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
+[Fri Nov 08 21:40:13.241063 2024] [core:alert] [pid 18] [client 172.18.0.1:45606] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
+[Fri Nov 08 21:46:37.419719 2024] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
