@@ -77,3 +77,5 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Fri Nov 08 21:40:12.801392 2024] [core:alert] [pid 17] [client 172.18.0.1:45622] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed.
 [Fri Nov 08 21:40:13.241063 2024] [core:alert] [pid 18] [client 172.18.0.1:45606] /var/www/html/public/.htaccess: /var/www/html/public/.htaccess:1: <<<<<<<> was not closed., referer: http://localhost:8080/
 [Fri Nov 08 21:46:37.419719 2024] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[Fri Nov 08 21:46:45.362780 2024] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.0.30 configured -- resuming normal operations
+[Fri Nov 08 21:46:45.363344 2024] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
