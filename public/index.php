@@ -33,4 +33,5 @@ $router->get('/login', [LoginController::class, 'login']);
 $router->post('/login', [LoginController::class, 'login']);
 $router->get('/logout', [LoginController::class, 'logout']);
 
+// Comprueba y ejecuta las rutas
 $router->comprobarRutas();
