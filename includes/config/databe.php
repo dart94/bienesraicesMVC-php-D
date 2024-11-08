@@ -1,3 +1,4 @@
+<!-- Comentario -->
 <?php
 
 function conectarDB(): mysqli
