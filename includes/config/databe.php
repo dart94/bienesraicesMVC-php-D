@@ -1,22 +1,15 @@
 <?php
 function conectarDB() : mysqli {
-    // Usar la URL pública de Railway
-    $host = 'autorack.proxy.rlwy.net';  // Host público
-    $user = 'root';
-    $password = $_ENV['MYSQL_ROOT_PASSWORD'] ?? '';
-    $database = 'railway';
-    $port = 48982;  // Puerto público
+    $host = $_ENV['MYSQLHOST'] ?? 'localhost';
+    $user = $_ENV['MYSQLUSER'] ?? 'root';
+    $password = $_ENV['MYSQLPASSWORD'] ?? '';
+    $database = $_ENV['MYSQLDATABASE'] ?? 'test';
+    $port = $_ENV['MYSQLPORT'] ?? 3306;
 
     try {
-        $db = new mysqli(
-            $host,
-            $user,
-            $password,
-            $database,
-            $port
-        );
+        $db = new mysqli($host, $user, $password, $database, $port);
 
-        if($db->connect_error) {
+        if ($db->connect_error) {
             throw new Exception("Error de conexión: " . $db->connect_error);
         }
 
