@@ -27,4 +27,7 @@ COPY . .
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 
 # Copia la configuración personalizada de Apache
-COPY apache-config.conf /etc/apache2/sites-available/00
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
+
+# Expone el puerto de Apache
+EXPOSE 80
