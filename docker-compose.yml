@@ -7,8 +7,8 @@ services:
     volumes:
       - .:/var/www/html
     environment:
-      - MYSQL_HOST=autorack.proxy.rlwy.net
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=railway
-      - MYSQL_PORT=48982
+      - MYSQLHOST=mysql.railway.internal
+      - MYSQLUSER=root
+      - MYSQLPASSWORD=vnrotqSGIQVLCSwArWfQiKlHyQvNItGQ
+      - MYSQLDATABASE=railway
+      - MYSQLPORT=48982
