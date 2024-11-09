@@ -1,15 +1,19 @@
 <?php
 function conectarDB() : mysqli {
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-    
+    // Valores por defecto de Railway
+    $host = $_ENV['MYSQLHOST'] ?? $_ENV['DB_HOST'] ?? '';
+    $user = $_ENV['MYSQLUSER'] ?? $_ENV['DB_USER'] ?? '';
+    $password = $_ENV['MYSQLPASSWORD'] ?? $_ENV['DB_PASS'] ?? '';
+    $database = $_ENV['MYSQLDATABASE'] ?? $_ENV['DB_NAME'] ?? '';
+    $port = $_ENV['MYSQLPORT'] ?? '3306';
+
     try {
         $db = new mysqli(
-            $_ENV['MYSQLHOST'],
-            $_ENV['MYSQLUSER'],
-            $_ENV['MYSQLPASSWORD'],
-            $_ENV['MYSQLDATABASE'],
-            $_ENV['MYSQLPORT'] ?? 3306
+            $host,
+            $user,
+            $password,
+            $database,
+            $port
         );
 
         if($db->connect_error) {
@@ -19,11 +23,14 @@ function conectarDB() : mysqli {
         $db->set_charset('utf8');
         return $db;
     } catch (Exception $e) {
-        echo "Error: " . $e->getMessage() . "<br>";
-        echo "Host: " . $_ENV['MYSQLHOST'] . "<br>";
-        echo "User: " . $_ENV['MYSQLUSER'] . "<br>";
-        echo "Database: " . $_ENV['MYSQLDATABASE'] . "<br>";
-        echo "Port: " . ($_ENV['MYSQLPORT'] ?? '3306') . "<br>";
+        echo "<pre>";
+        echo "Error: " . $e->getMessage() . "\n";
+        echo "Detalles de conexión:\n";
+        echo "Host: " . $host . "\n";
+        echo "User: " . $user . "\n";
+        echo "Database: " . $database . "\n";
+        echo "Port: " . $port . "\n";
+        echo "</pre>";
         die();
     }
 }
