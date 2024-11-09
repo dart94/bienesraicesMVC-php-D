@@ -1,11 +1,11 @@
 <?php
 function conectarDB() : mysqli {
-    // Valores por defecto de Railway
-    $host = $_ENV['MYSQLHOST'] ?? $_ENV['DB_HOST'] ?? '';
-    $user = $_ENV['MYSQLUSER'] ?? $_ENV['DB_USER'] ?? '';
-    $password = $_ENV['MYSQLPASSWORD'] ?? $_ENV['DB_PASS'] ?? '';
-    $database = $_ENV['MYSQLDATABASE'] ?? $_ENV['DB_NAME'] ?? '';
-    $port = $_ENV['MYSQLPORT'] ?? '3306';
+    // En Docker con Railway, usamos el host interno
+    $host = 'mysql.railway.internal';  // Host fijo para Docker en Railway
+    $user = 'root';
+    $password = $_ENV['MYSQL_ROOT_PASSWORD'] ?? '';  // Usando la variable correcta
+    $database = 'railway';
+    $port = 3306;  // Puerto interno fijo en Docker
 
     try {
         $db = new mysqli(
