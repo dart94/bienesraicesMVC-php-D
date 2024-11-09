@@ -23,8 +23,8 @@ RUN composer install --no-dev --optimize-autoloader
 # Copia los archivos de la aplicación
 COPY . .
 
-# Ajusta permisos
+# Configura permisos
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 
-# Expone el puerto de Apache
-EXPOSE 80
+# Copia la configuración personalizada de Apache
+COPY apache-config.conf /etc/apache2/sites-available/00
