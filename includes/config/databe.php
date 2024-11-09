@@ -1,20 +1,17 @@
 <?php
-
-
-function conectarDB(): mysqli
-{
+function conectarDB() : mysqli {
     $db = new mysqli(
-        getenv('DB_HOST'),
-        getenv('DB_USER'),
-        getenv('DB_PASS'),
-        getenv('DB_NAME')
+        $_ENV['MYSQLHOST'] ?? '',
+        $_ENV['MYSQLUSER'] ?? '',
+        $_ENV['MYSQLPASSWORD'] ?? '',
+        $_ENV['MYSQLDATABASE'] ?? ''
     );
 
-    $db->set_charset('utf8');
-
-    if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
+    if($db->connect_error) {
+        echo "Error de conexión: " . $db->connect_error;
+        exit;
     }
 
+    $db->set_charset('utf8');
     return $db;
 }
