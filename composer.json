@@ -16,9 +16,9 @@
     },
     "autoload": {
     "psr-4": {
-        "Controllers\\": "./controllers",
-        "Model\\": "./models",
-        "MVC\\": "./"
+        "Controllers\\": "controllers/",
+        "MVC\\": "path/to/mvc/directory", 
+        "Model\\": "path/to/models/directory" 
     }
 }
 }
