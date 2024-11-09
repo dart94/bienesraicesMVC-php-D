@@ -8,7 +8,6 @@ function conectarDB(): mysqli
     $name = getenv('MYSQLDATABASE') ?: die("Error: La variable MYSQLDATABASE no está definida.");
     $port = getenv('MYSQLPORT') ?: 3306;
 
-    // Intenta conectar a la base de datos
     $db = new mysqli($host, $user, $pass, $name, $port);
 
     if ($db->connect_error) {

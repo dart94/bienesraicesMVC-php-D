@@ -1,8 +1,11 @@
 <?php
 use Model\ActiveRecord;
 require __DIR__ . '/../vendor/autoload.php';
-$doteenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$doteenv->safeLoad();
+// Cargar el archivo .env solo en desarrollo
+if (getenv('RAILWAY_ENVIRONMENT') === false) { 
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+    $dotenv->load();
+}
 
 require 'funciones.php';
 require 'config/databe.php';
