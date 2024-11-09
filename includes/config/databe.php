@@ -1,25 +1,47 @@
 <?php
-
 function conectarDB(): mysqli
 {
-    $host = getenv('MYSQLHOST');
-    $user = getenv('MYSQLUSER');
-    $pass = getenv('MYSQLPASSWORD');
-    $name = getenv('MYSQLDATABASE');
-    $port = getenv('MYSQLPORT');
+    // Verificar todas las variables de entorno necesarias
+    $required_vars = [
+        'MYSQLHOST',
+        'MYSQLUSER',
+        'MYSQLPASSWORD',
+        'MYSQLDATABASE',
+        'MYSQLPORT'
+    ];
 
-    // Verifica que $host esté definido antes de intentar conectarse
-    if (!$host) {
-        die("Error: MYSQLHOST no está definido.");
+    $missing_vars = [];
+    $config = [];
+
+    foreach ($required_vars as $var) {
+        $value = getenv($var);
+        if ($value === false || $value === '') {
+            $missing_vars[] = $var;
+        }
+        $config[$var] = $value;
     }
 
-    $db = new mysqli($host, $user, $pass, $name, $port);
-
-    if ($db->connect_error) {
-        echo "No se pudo conectar: " . $db->connect_error;
-        exit;
+    if (!empty($missing_vars)) {
+        die("Error: Las siguientes variables de entorno no están definidas: " . 
+            implode(', ', $missing_vars));
     }
 
-    $db->set_charset('utf8');
-    return $db;
+    try {
+        $db = new mysqli(
+            $config['MYSQLHOST'],
+            $config['MYSQLUSER'],
+            $config['MYSQLPASSWORD'],
+            $config['MYSQLDATABASE'],
+            $config['MYSQLPORT']
+        );
+
+        if ($db->connect_error) {
+            throw new Exception("Error de conexión: " . $db->connect_error);
+        }
+
+        $db->set_charset('utf8');
+        return $db;
+    } catch (Exception $e) {
+        die("Error de conexión a la base de datos: " . $e->getMessage());
+    }
 }

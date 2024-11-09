@@ -20,6 +20,8 @@ WORKDIR /var/www/html
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader
 
+COPY .env /var/www/html/.env
+
 # Copia los archivos de la aplicación
 COPY . .
 
