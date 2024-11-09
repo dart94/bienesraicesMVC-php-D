@@ -2,11 +2,16 @@
 
 function conectarDB(): mysqli
 {
-    $host = getenv('DB_HOST');
-    $user = getenv('DB_USER');
-    $pass = getenv('DB_PASS');
-    $name = getenv('DB_NAME');
-    $port = getenv('DB_PORT');
+    $host = getenv('MYSQLHOST');
+    $user = getenv('MYSQLUSER');
+    $pass = getenv('MYSQLPASSWORD');
+    $name = getenv('MYSQLDATABASE');
+    $port = getenv('MYSQLPORT');
+
+    // Verifica que $host esté definido antes de intentar conectarse
+    if (!$host) {
+        die("Error: MYSQLHOST no está definido.");
+    }
 
     $db = new mysqli($host, $user, $pass, $name, $port);
 
