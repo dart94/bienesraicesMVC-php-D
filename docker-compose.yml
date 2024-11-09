@@ -7,8 +7,16 @@ services:
     volumes:
       - .:/var/www/html
     environment:
-      - MYSQLHOST=mysql.railway.internal
-      - MYSQLUSER=root
-      - MYSQLPASSWORD=vnrotqSGIQVLCSwArWfQiKlHyQvNItGQ
-      - MYSQLDATABASE=railway
-      - MYSQLPORT=48982
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=1234
+      - DB_NAME=bienesraices_crud
+      - EMAIL_HOST=sandbox.smtp.mailtrap.io
+      - EMAIL_PORT=2525
+      - EMAIL_USER=aba6a03bcaf162
+      - EMAIL_PASS=d4b70c05dffaec
+      - APP_URL=https://bienesraices-php-mvc-diego.mnz.dom.my.id
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7

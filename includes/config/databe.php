@@ -2,22 +2,19 @@
 
 function conectarDB(): mysqli
 {
-    // Configuración directa sin variables de entorno
-    $host = 'autorack.proxy.rlwy.net';  // Host externo
-    $user = 'root';                     // Usuario proporcionado
-    $pass = 'vnrotqSGIQVLCSwArWfQiKlHyQvNItGQ'; // Contraseña proporcionada
-    $name = 'railway';                  // Nombre de la base de datos
-    $port = 48982;                      // Puerto externo específico
+    $db = new mysqli(
+        $_ENV['DB_HOST'],
+        $_ENV['DB_USER'],
+        $_ENV['DB_PASS'],
+        $_ENV['DB_NAME']
+    );
 
-    // Intenta la conexión a la base de datos
-    $db = new mysqli($host, $user, $pass, $name, $port);
+    $db->set_charset('utf8');
 
-    if ($db->connect_error) {
-        echo "No se pudo conectar: " . $db->connect_error;
+    if (!$db) {
+        echo "No se pudo conectar";
         exit;
     }
 
-    $db->set_charset('utf8');
     return $db;
 }
-
