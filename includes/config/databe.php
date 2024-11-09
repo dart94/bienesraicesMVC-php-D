@@ -2,12 +2,18 @@
 
 function conectarDB(): mysqli
 {
-    // Usamos RAILWAY_PRIVATE_DOMAIN como el host de la base de datos
-    $host = getenv('RAILWAY_PRIVATE_DOMAIN') ?: die("Error: La variable RAILWAY_PRIVATE_DOMAIN no está definida.");
-    $user = getenv('MYSQLUSER') ?: die("Error: La variable MYSQLUSER no está definida.");
-    $pass = getenv('MYSQLPASSWORD') ?: die("Error: La variable MYSQLPASSWORD no está definida.");
-    $name = getenv('MYSQLDATABASE') ?: die("Error: La variable MYSQLDATABASE no está definida.");
-    $port = getenv('MYSQLPORT') ?: 3306; // Si MYSQLPORT no está definido, usa el puerto 3306 por defecto
+    // Extrae los detalles de conexión desde MYSQL_PUBLIC_URL
+    $url = getenv('MYSQL_PUBLIC_URL');
+    if (!$url) {
+        die("Error: La variable MYSQL_PUBLIC_URL no está definida.");
+    }
+
+    $dbUrl = parse_url($url);
+    $host = $dbUrl['host'] ?? die("Error: Host no definido en MYSQL_PUBLIC_URL.");
+    $port = $dbUrl['port'] ?? 3306;
+    $user = $dbUrl['user'] ?? die("Error: Usuario no definido en MYSQL_PUBLIC_URL.");
+    $pass = $dbUrl['pass'] ?? die("Error: Contraseña no definida en MYSQL_PUBLIC_URL.");
+    $name = ltrim($dbUrl['path'], '/') ?: die("Error: Nombre de la base de datos no definido en MYSQL_PUBLIC_URL.");
 
     // Intenta conectar a la base de datos
     $db = new mysqli($host, $user, $pass, $name, $port);
