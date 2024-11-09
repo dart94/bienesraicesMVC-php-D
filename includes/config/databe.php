@@ -16,7 +16,8 @@ function conectarDB() : mysqli {
         $_ENV['MYSQLHOST'] ?? '',
         $_ENV['MYSQLUSER'] ?? '',
         $_ENV['MYSQLPASSWORD'] ?? '',
-        $_ENV['MYSQLDATABASE'] ?? ''
+        $_ENV['MYSQLDATABASE'] ?? '',
+        $_ENV['MYSQLPORT'] ?? 3306  // Añadimos el puerto
     );
 
     if($db->connect_error) {
